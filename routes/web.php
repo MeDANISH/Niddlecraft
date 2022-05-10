@@ -43,3 +43,15 @@ Route::get('/user-gifts-&-rewards', [MainController::class, 'userGiftsRewards'])
 
 // User Body Measurement page
 Route::get('/user-body-measurements', [MainController::class, 'userBodyMeasurements'])->name('user-body-measurements');
+
+// User Appointment page
+Route::get('/user-appointment', [MainController::class, 'userAppointment'])->name('user-appointment');
+
+// Admin Login page
+Route::get('/admin-login', [MainController::class, 'adminLogin'])->name('admin-login');
+
+// Admin forgot password
+Route::get('/admin-forgot-password', [MainController::class, 'adminForgotPassword'])->name('admin-forgot-password');
+
+// Admin otp verification
+Route::get('/admin-otp-verification', [MainController::class, 'adminOtpVerify'])->name('admin-otp-verification');

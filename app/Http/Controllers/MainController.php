@@ -55,4 +55,24 @@ class MainController extends Controller
     function userBodyMeasurements(){
         return view('user.user-body-measurements');
     }
+
+    // User Body Measurements page
+    function userAppointment(){
+        return view('services.user-appointment');
+    }
+
+    // Admin Login page
+    function adminLogin(){
+        return view('authentication.adminAuth.admin-login');
+    }
+
+    // Admin Forgot Password page
+    function adminForgotPassword(){
+        return view('authentication.adminAuth.admin-forgot-password');
+    }
+
+    // Admin OTP to Change Password page
+    function adminOtpVerify(){
+        return view('authentication.adminAuth.admin-otp-verification');
+    }
 }
