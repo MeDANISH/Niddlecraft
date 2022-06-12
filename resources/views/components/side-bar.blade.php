@@ -4,9 +4,13 @@
 
     @if ($userProfile==='Yes')
         <div class="w-[10vw] h-[10vw] overflow-hidden rounded-full relative top-[-3vw] left-[4vw] img-div">
-            <img src="images/customer/cust2.png" alt="User profile">
+        @if ($userImg)
+            <img src="{{ asset('storage/'.$userImg) }}" alt="User profile">
+        @else
+            <img src="{{ asset('images/customer/demoUser.jpg') }}" alt="User profile">
+        @endif
             <div class="cursor-pointer w-[10vw] h-[5vw] bg-[#00000051] absolute left-[0vw] bottom-[-5vw] text-[2vw] text-[#ecececcc] flex justify-center items-center img-cover"><i class="fa-solid fa-camera"></i></div>
-            <input class="hidden" type="file" name="img" id="img-upload" accept="image/*">
+            <input class="hidden" type="file" name="image" id="img-upload" accept="image/*">
         </div>
     @elseif ($userProfile==='No')
         <div class="text-[1.7vw]">My Account</div>
@@ -26,7 +30,7 @@
             <a href="{{ route('user-manage-address') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="address"><i class="fa-solid fa-location-dot mr-[0.5vw]"></i>Manage Address</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('user-gifts-&-rewards') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="gifts"><i class="fa-solid fa-circle-dollar-to-slot mr-[0.5vw]"></i>Gifts & Reawards</a>
+            <a href="{{ route('user-feedback') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="feedback"><i class="fa-solid fa-comment-dots mr-[0.5vw]"></i>Feedback</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center">
             <a href="{{ route('user-body-measurements') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="measurements"><i class="fa-solid fa-tape mr-[0.5vw]"></i>Body Measurement</a>
@@ -35,19 +39,19 @@
 @elseif ($userType==='Admin')
     <div class="flex flex-col justify-around items-center">
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('user-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="profile"><i class="fa-solid fa-user mr-[0.5vw]"></i>Admin Profile</a>
+            <a href="{{ route('admin-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="profile"><i class="fa-solid fa-user mr-[0.5vw]"></i>Admin Profile</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('user-manage-orders') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="orders"><i class="fa-solid fa-gift mr-[0.5vw]"></i>Manage Orders</a>
+            <a href="{{ route('admin-manage-orders') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="orders"><i class="fa-solid fa-cart-arrow-down mr-[0.5vw]"></i>Manage Orders</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('user-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="address"><i class="fa-solid fa-location-dot mr-[0.5vw]"></i>Manage Address</a>
+            <a href="{{ route('user-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="address"><i class="fa-solid fa-indian-rupee-sign mr-[0.5vw]"></i>Manage Payments</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center border-b-[0.15vw]">
-            <a href="{{ route('user-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="gifts"><i class="fa-solid fa-circle-dollar-to-slot mr-[0.5vw]"></i>Gift & Reawards</a>
+            <a href="{{ route('manage-users') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="manageUsers"><i class="fa-solid fa-users mr-[0.5vw]"></i>Manage Users</a>
         </div>
         <div class="h-[5vw] w-[18vw] flex items-center">
-            <a href="{{ route('user-profile') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="measurement"><i class="fa-solid fa-tape mr-[0.5vw]"></i>Body Measurement</a>
+            <a href="{{ route('customer-support') }}" class="text-[#0000007b] hover:text-[#0000007b]" id="quarries"><i class="fa-solid fa-message mr-[0.5vw]"></i>Customer Support</a>
         </div>
     </div>
 @endif
